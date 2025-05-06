@@ -1,9 +1,9 @@
 ## Guaca-Guaca
 
+[![CI](https://github.com/jmeiracorbal/guaca-guaca/actions/workflows/ci.yml/badge.svg)](https://github.com/jmeiracorbal/guaca-guaca/actions)
 [![Docker](https://img.shields.io/badge/docker-ready-blue)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/jmeiracorbal/guaca-guaca)](https://github.com/jmeiracorbal/guaca-guaca/commits/master)
-[![CI](https://github.com/jmeiracorbal/guaca-guaca/actions/workflows/ci.yml/badge.svg)](https://github.com/jmeiracorbal/guaca-guaca/actions)
 
 Guaca-Guaca is a simplified Docker-based environment for deploying Apache Guacamole with built-in extensibility and clean structure. It is designed for easy resets and custom setups without added complexity.
 
@@ -14,7 +14,9 @@ Oriented to customization without complexity:
 ```text
 guaca-guaca/
 ├── docker-compose.yml
-├── .env
+├── .env.example
+├── init/
+│   └── initdb.sql
 └── data/
     └── guac_home/
         ├── extensions/
@@ -35,7 +37,7 @@ export $(grep -v '^#' .env | xargs)
 ```
 
 ```bash
-# If you run previosly the environment variables
+## If you previously exported the environment variables
 docker run --rm guacamole/guacamole:$GUACAMOLE_VERSION /opt/guacamole/bin/initdb.sh --mysql > init/initdb.sql
 ```
 
