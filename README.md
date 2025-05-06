@@ -3,6 +3,7 @@
 [![Docker](https://img.shields.io/badge/docker-ready-blue)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/jmeiracorbal/guaca-guaca)](https://github.com/jmeiracorbal/guaca-guaca/commits/master)
+[![CI](https://github.com/jmeiracorbal/guaca-guaca/actions/workflows/ci.yml/badge.svg)](https://github.com/jmeiracorbal/guaca-guaca/actions)
 
 Guaca-Guaca is a simplified Docker-based environment for deploying Apache Guacamole with built-in extensibility and clean structure. It is designed for easy resets and custom setups without added complexity.
 
