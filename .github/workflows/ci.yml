@@ -9,7 +9,7 @@ on:
 jobs:
   docker-compose-lint:
     runs-on: ubuntu-latest
-    name: Validate docker-compose and .env
+    name: Validate docker-compose and env.example
 
     steps:
       - name: Checkout code
@@ -20,6 +20,9 @@ jobs:
 
       - name: Validate docker-compose.yml syntax
         run: docker compose -f docker-compose.yml config
+
+      - name: Copy .env.example as .env
+        run: cp .env.example .env
 
       - name: Validate required .env variables
         run: |
