@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  docker-compose-lint:
+    runs-on: ubuntu-latest
+    name: Validate docker-compose and .env
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Validate docker-compose.yml syntax
+        run: docker compose -f docker-compose.yml config
+
+      - name: Validate required .env variables
+        run: |
+          REQUIRED_VARS=(
+            GUACAMOLE_VERSION
+            MYSQL_ROOT_PASSWORD
+            MYSQL_DATABASE
+            MYSQL_USER
+            MYSQL_PASSWORD
+          )
+
+          MISSING=()
+          for VAR in "${REQUIRED_VARS[@]}"; do
+            if ! grep -q "^${VAR}=" .env; then
+              MISSING+=("$VAR")
+            fi
+          done
+
+          if [ "${#MISSING[@]}" -ne 0 ]; then
+            echo "Missing required variables in .env:"
+            printf ' - %s\n' "${MISSING[@]}"
+            exit 1
+          fi

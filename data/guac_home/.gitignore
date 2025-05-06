@@ -1,0 +1,10 @@
+guacamole.properties
+
+lib
+!lib/.gitkeep
+
+extensions
+!extensions/.gitkeep
+
+log
+!log/.gitkeep
