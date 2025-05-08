@@ -1,4 +1,4 @@
-## Guaca-Guaca
+![alt text](logo-guaca-guaca.png "Guaca Guaca")
 
 [![CI](https://github.com/jmeiracorbal/guaca-guaca/actions/workflows/ci.yml/badge.svg)](https://github.com/jmeiracorbal/guaca-guaca/actions)
 [![Docker](https://img.shields.io/badge/docker-ready-blue)](https://www.docker.com/)

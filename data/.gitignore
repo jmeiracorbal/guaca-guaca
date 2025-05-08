@@ -1,2 +1,10 @@
-mysql
-!mysql/.gitkeep
+guac_home/guacamole.properties
+
+guac_home/lib/*
+!guac_home/lib/.gitkeep
+
+guac_home/extensions/*
+!guac_home/extensions/.gitkeep
+
+guac_home/log/*
+!guac_home/log/.gitkeep

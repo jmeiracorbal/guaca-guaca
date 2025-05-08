@@ -10,7 +10,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - ./init:/docker-entrypoint-initdb.d
-      - mysql_data:/var/lib/mysql
+      - guacamole_mysql:/var/lib/mysql
 
   guacd:
     platform: linux/amd64
@@ -36,8 +36,7 @@ services:
     ports:
       - "8081:8080"
     volumes:
-      - guac_home:/guac-home
+      - ./data/guac_home:/guac-home
 
 volumes:
-  mysql_data:
-  guac_home:
+  guacamole_mysql:
