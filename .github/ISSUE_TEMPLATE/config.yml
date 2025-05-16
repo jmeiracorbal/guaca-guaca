@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Contact the maintainer
+    url: mailto:jmeiracorbal@gmail.com
+    about: If your question is not an issue or PR, then by all means feel free to contact me directly.

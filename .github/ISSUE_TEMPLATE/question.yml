@@ -1,0 +1,23 @@
+name: Question / Discussion
+description: Suggest an improvement or new capability.
+title: "[Question] "
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is for non-feature, non-bug discussion — please don't hesitate to ask questions about implementation, design, or usage recommendations.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: What do you want to discuss?
+      placeholder: Write your question or topic here
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: Context (optional)
+      placeholder: Add any relevant background information or context that might help in understanding your question

@@ -1,0 +1,31 @@
+name: Bug report
+description: Report an issue or unexpected behavior.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide as much context as possible.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: Describe the issue you are facing in detail
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: Provide step-by-step instructions
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or output
+      placeholder: Paste output or logs that are relevant to the issue
