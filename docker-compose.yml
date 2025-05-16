@@ -9,7 +9,7 @@ services:
       timeout: 5s
       retries: 5
 
-  guacamole:
+  guaca-guaca:
     build:
       context: ./build
     container_name: guacamole
