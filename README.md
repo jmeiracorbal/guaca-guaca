@@ -31,10 +31,11 @@ To quickly start using Guaca-Guaca you need to create a `docker-compose.yml` fil
 
 ```yaml
 services:
+
   guacd:
     image: guacamole/guacd:1.5.3
-    restart: unless-stopped
     container_name: guacd
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "pgrep", "guacd"]
       interval: 10s
@@ -45,10 +46,14 @@ services:
     image: jmeiracorbal/guaca-guaca:latest
     container_name: guacamole
     restart: unless-stopped
+    env_file: .env
     environment:
       GUACD_HOSTNAME: guacd
     ports:
       - "8080:8080"
+    depends_on:
+      guacd:
+        condition: service_healthy
 ```
 
 You always have to indicate the host for `guacd` on guacamole environment:
@@ -58,7 +63,7 @@ You always have to indicate the host for `guacd` on guacamole environment:
       GUACD_HOSTNAME: guacd
 ```
 
-**Configure database credentials:**
+**Ensure to configure database credentials:**
 
 Before starting, make sure to create a .env file in the same directory as your `docker-compose.yml`, with this content:
 
@@ -68,7 +73,11 @@ MYSQL_USER=guacuser
 MYSQL_PASSWORD=guacpass
 ```
 
-These values are used to init the database and configure the internal connection between Guacamole and MariaDB.
+These values are used to init the database and configure the internal connection between Guacamole and MariaDB. Check if the compose file has the env file indicated:
+
+```yaml
+    env_file: .env
+```
 
 **Run the compose**:
 

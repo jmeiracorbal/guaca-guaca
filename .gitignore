@@ -2,3 +2,5 @@ init/*
 !init/.gitkeep
 
 .env
+
+examples

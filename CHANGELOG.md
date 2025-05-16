@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [v0.3.1] - 2025-05-16
+
+### Fixed
+
+- Docker Compose example now includes env_file: .env to avoid database creation errors on user setups.
+- Add to compose example that .env must contain required variables (MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD).
+
+### Changed
+
+- README updated to indicate that compose file require environment variables.
+
+---
+
 ## [v0.3.0] - 2025-05-16
 
 ### Added
